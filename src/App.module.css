@@ -1,0 +1,34 @@
+.app-wrapper {
+	display: grid;
+	grid-template-areas:
+		"h h"
+		"n c";
+	grid-template-columns: 2fr 10fr;
+	grid-template-rows: auto 1fr; /* Распределение строк: шапка, контент, подвал */
+	width: 80%; /* Ширина контейнера */
+	max-width: 1200px; /* Максимальная ширина */
+	margin: auto; /* Центрирование по горизонтали */
+	height: 100vh; /* Высота контейнера по высоте экрана */
+	justify-items: center; /* Центрирование элементов по горизонтали */
+	align-items: center; /* Центрирование элементов по вертикали */
+	grid-gap: 5px;
+	padding-right: 70px;
+}
+
+.app-wrapper-content {
+	grid-area: c;
+	background-color: rgba(0, 0, 0, 0.02);
+}
+
+.App-link {
+	color: #61dafb;
+}
+
+main {
+	flex: 1;
+	padding: "1rem";
+	height: auto;
+	content: box;
+	overflow: auto;
+	scrollbar-width: none;
+}

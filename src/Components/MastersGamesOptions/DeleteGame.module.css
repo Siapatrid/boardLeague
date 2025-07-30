@@ -1,0 +1,76 @@
+.deleteBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+}
+
+.gameItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	border: 1px solid #ccc;
+	margin-bottom: 10px;
+	background-color: #cd1a1a;
+	border-radius: 4px;
+}
+
+.gameItem span {
+	font-weight: bold;
+}
+
+/* Стили для оверлея (затемнения фона) */
+.overlay {
+	position: fixed; /* Позиционируем поверх всего */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000; /* Убедитесь, что он выше других элементов */
+}
+
+/* Стили для самого диалогового окна */
+.confirmationDialog {
+	background-color: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+	text-align: center;
+	max-width: 400px;
+	width: 90%;
+	animation: fadeIn 0.3s ease-out; /* Простая анимация появления */
+}
+
+.confirmationDialog h3 {
+	margin-top: 0;
+	color: #333;
+}
+
+.confirmationDialog p {
+	margin-bottom: 20px;
+	color: #555;
+}
+
+.dialogActions {
+	display: flex;
+	justify-content: center;
+	gap: 15px; /* Отступ между кнопками */
+}
+
+/* Опциональная анимация */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

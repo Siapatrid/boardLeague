@@ -1,0 +1,11 @@
+.loginBlock {
+	display: block;
+	align-items: flex-end;
+	justify-content: center;
+	padding-top: 10%;
+	padding-left: 40%;
+}
+
+.text {
+	color: white;
+}
