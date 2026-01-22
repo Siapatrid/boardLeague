@@ -1,3 +1,7 @@
+import { ThunkAction, ThunkDispatch } from "redux-thunk";
+import { Action } from "redux";
+import { RootState } from "./Redux-store";
+
 const ADD_GAME = "ADD_GAME";
 const CHANGE_GAME = "CHANGE_GAME";
 const DELETE_GAME = "DELETE_GAME";
@@ -177,7 +181,9 @@ const deleteGameAC = (id: string): deleteGameACType => ({
 	id: id,
 });
 
-export const deleteGameTC = (id: string) => (dispatch: any) => {
+type ActionDispatch = ThunkDispatch<RootState, unknown, Action>;
+
+export const deleteGameTC = (id: string) => (dispatch: ActionDispatch) => {
 	dispatch(deleteGameAC(id));
 };
 

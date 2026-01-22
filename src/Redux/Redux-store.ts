@@ -1,5 +1,4 @@
 import { applyMiddleware, configureStore } from "@reduxjs/toolkit";
-// import { reducer as formReducer } from 'redux-form'
 import { thunk } from "redux-thunk";
 import gamesListReducer from "./GamesListReducer";
 import masterReducer from "./MasterReducer";
@@ -19,17 +18,3 @@ export type RootState = ReturnType<AppStore["getState"]>;
 export type AppDispatch = AppStore["dispatch"];
 
 const thunkMiddleware = thunk;
-
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-// const store = createStore(
-//     reducers,
-//     /* preloadedState, */ composeEnhancers(applyMiddleware(thunkMiddleware))
-// )
-
-// let store = createStore(reducers, applyMiddleware(thunkMiddleware));
-
-// @ts-ignore
-
-// state.window._store_ = store;
-
-// export default store;

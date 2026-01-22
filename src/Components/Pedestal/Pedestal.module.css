@@ -3,6 +3,8 @@
 	height: 500px;
 	perspective: 1000px;
 	padding: 10px 0 10px 0;
+	border-radius: 2px;
+	border-color: aliceblue;
 }
 
 .card__inner {
@@ -125,4 +127,11 @@
 	margin-top: 10px;
 	position: relative;
 	z-index: 3 !important;
+}
+.deleteButton {
+	width: 100%;
+	margin-top: 10px;
+	position: relative;
+	z-index: 3 !important;
+	background: red;
 }

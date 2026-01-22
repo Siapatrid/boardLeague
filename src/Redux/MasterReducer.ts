@@ -1,3 +1,7 @@
+import { ThunkAction, ThunkDispatch } from "redux-thunk";
+import { Action } from "redux";
+import { RootState } from "./Redux-store";
+
 const SUCC_LOGIN = "SUCC_LOGIN";
 const LOGOUT = "LOGOUT";
 
@@ -13,7 +17,7 @@ let initialState: InitialStateType = {
 		login: "Luixo",
 		password: "LuixoLuixo",
 	},
-	isAuth: false,
+	isAuth: true,
 };
 
 const masterReducer = (
@@ -51,11 +55,13 @@ export const logoutAC = (): logoutACType => ({
 	type: LOGOUT,
 });
 
-export const loginTC = () => (dispatch: any) => {
+type ActionDispatch = ThunkDispatch<RootState, unknown, Action>;
+
+export const loginTC = () => (dispatch: ActionDispatch) => {
 	dispatch(loginAC());
 };
 
-export const logoutTC = () => (dispatch: any) => {
+export const logoutTC = () => (dispatch: ActionDispatch) => {
 	dispatch(logoutAC());
 };
 

@@ -7,18 +7,8 @@ import { DeleteGame } from "./Components/MastersGamesOptions/DeleteGame";
 import { HeroUIProvider } from "@heroui/react";
 import { PedestalContainer } from "./Components/Pedestal/PedestalContainer";
 
-// function withRouter(Component) {
-//     function ComponentWithRouterProp(props) {
-//         let location = useLocation()
-//         let navigate = useNavigate()
-//         let params = useParams()
-//         return <Component {...props} router={{location, navigate, params}}/>
-//     }
-// }
-
 function App() {
 	return (
-		// <div className='app-wrapper'>
 		<HeroUIProvider>
 			<div
 				style={{
@@ -37,23 +27,10 @@ function App() {
 						alignContent: "flex-start",
 					}}
 				>
-					{/* <aside
-						style={{
-							width: "250px",
-							background: "#333",
-							color: "#fff",
-							padding: "1rem",
-						}}
-					>
-						<GamesList />
-					</aside> */}
-					{/*<div className='app-wrapper-content'>*/}
 					<main className={style.main}>
 						<Routes>
-							{/* <Route path="/pedestal/*" element={<Pedestal />} /> */}
 							<Route path="/login" element={<Login />} />
 							<Route path="/newgame" element={<NewGame />} />
-							<Route path="/deletegame" element={<DeleteGame />} />
 						</Routes>
 						<PedestalContainer />
 					</main>

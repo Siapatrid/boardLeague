@@ -22,16 +22,13 @@ const Header: React.FC = () => {
 			{isAuth === true ? (
 				<Dropdown>
 					<DropdownTrigger>
-						<Button variant="bordered">Действия</Button>
+						<Button variant="bordered">+</Button>
 					</DropdownTrigger>
 					<DropdownMenu aria-label="Static Actions">
 						<DropdownItem key="new">
 							<NavLink to={`/newgame`} className={style.loginButton}>
 								Добавить новую игру
 							</NavLink>
-						</DropdownItem>
-						<DropdownItem key="delete" className="text-danger" color="danger">
-							<NavLink to={"/deletegame"}>Удалить игру</NavLink>
 						</DropdownItem>
 					</DropdownMenu>
 				</Dropdown>

@@ -3,23 +3,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../Redux/Redux-store";
 import { Button } from "@heroui/react";
 import style from "./DeleteGame.module.css";
-import { deleteGameTC } from "../../Redux/GamesListReducer";
+import { deleteGameTC, GameDataType } from "../../Redux/GamesListReducer";
 import { useNavigate } from "react-router-dom";
 
-export const DeleteGame: React.FC = () => {
+export const DeleteGame: React.FC<GameDataType> = (props: GameDataType) => {
 	const dispatch: AppDispatch = useDispatch();
 
-	const gamesList = useSelector(
-		(state: RootState) => state.gamesList.gamesListData,
-	);
+	// const gamesList = useSelector(
+	// 	(state: RootState) => state.gamesList.gamesListData,
+	// );
 
 	const [gameIdToDelete, setGameIdToDelete] = useState<string | null>(null);
 
 	const [gameTitleToDelete, setGameTitleToDelete] = useState<string>("");
 
 	const handleDeleteClick = (id: string, title: string) => {
-		setGameIdToDelete(id); // Устанавливаем ID игры для удаления
-		setGameTitleToDelete(title); // Устанавливаем название для отображения в модальном окне
+		setGameIdToDelete(props.id); // Устанавливаем ID игры для удаления
+		setGameTitleToDelete(props.title); // Устанавливаем название для отображения в модальном окне
 	};
 
 	// Функция, вызываемая при отмене удаления в модальном окне
@@ -36,12 +36,12 @@ export const DeleteGame: React.FC = () => {
 		}
 	};
 
-	const deletingList = gamesList.map((e) => (
-		<div key={e.id} className={style.gameItem}>
-			<span>{e.title}</span>{" "}
-			<Button onPress={() => handleDeleteClick(e.id, e.title)}>Удалить</Button>
-		</div>
-	));
+	// const deletingList = gamesList.map((e) => (
+	// 	<div key={e.id} className={style.gameItem}>
+	// 		<span>{e.title}</span>{" "}
+	// 		<Button onPress={() => handleDeleteClick(e.id, e.title)}>Удалить</Button>
+	// 	</div>
+	// ));
 
 	const navigate = useNavigate();
 
@@ -51,8 +51,8 @@ export const DeleteGame: React.FC = () => {
 
 	return (
 		<div className={style.deleteBlock}>
-			<h2>Список игр для удаления:</h2>
-			{deletingList}
+			{/* <h2>Список игр для удаления:</h2>
+			{deletingList} */}
 
 			{gameIdToDelete && (
 				<div className={style.overlay}>

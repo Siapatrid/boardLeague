@@ -37,7 +37,7 @@ export const NewGame: React.FC = () => {
 
 	return (
 		<div className={style.newGameBlock}>
-			<h1>Добавление новой игры</h1>
+			<h1 className="text-lg mt-2">Добавление новой игры</h1>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div className={style.wrapper}>
 					<input

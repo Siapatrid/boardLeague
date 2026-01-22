@@ -64,12 +64,18 @@ export const GameChangeForm: React.FC<GameDataType> = (props: GameDataType) => {
 	};
 
 	return (
-		<div>
+		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 p-4">
 			{showForm && (
-				<div className={style.newGameBlock}>
-					<h1>Внести изменения</h1>
-					<form onSubmit={handleSubmit(onSubmit)}>
+				<div className="bg-grey p-8 rounded-lg shadow-xl max-w-xl w-full">
+					<h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
+						Внести изменения
+					</h1>
+					<form
+						onSubmit={handleSubmit(onSubmit)}
+						className="text-2xl font-bold text-center text-gray-800 mb-6"
+					>
 						<input
+							className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 							{...register("title", {
 								required: "Это обязательное поле",
 								// minLength: {
@@ -82,6 +88,7 @@ export const GameChangeForm: React.FC<GameDataType> = (props: GameDataType) => {
 						<p>{errors.title?.message}</p>
 						<br></br>
 						<input
+							className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
 							{...register("photo", {
 								// minLength: {
 								// 	value: 4,
@@ -92,74 +99,91 @@ export const GameChangeForm: React.FC<GameDataType> = (props: GameDataType) => {
 						/>
 						{/* errors will return when field validation fails  */}
 						{/* {errors.exampleRequired && <span>This field is required</span>} */}
-						<br></br>
-						<h1>I</h1>
-						<input
-							{...register("firstPlaceName", {
-								// minLength: {
-								// 	value: 4,
-								// 	message: "Минимальная длинна - 4 символа",
-								// },
-							})}
-							placeholder="Имя игрока (золото)"
-						/>
-						<> </>
-						<input
-							{...register("firstPlaceScore", {
-								// minLength: {
-								// 	value: 4,
-								// 	message: "Минимальная длинна - 4 символа",
-								// },
-							})}
-							placeholder="Счет игрока (золото)"
-						/>
-
-						<h1>II</h1>
-						<input
-							{...register("secondPlaceName", {
-								// minLength: {
-								// 	value: 4,
-								// 	message: "Минимальная длинна - 4 символа",
-								// },
-							})}
-							placeholder="Имя игрока (серебро)"
-						/>
-						<> </>
-						<input
-							{...register("secondPlaceScore", {
-								// minLength: {
-								// 	value: 4,
-								// 	message: "Минимальная длинна - 4 символа",
-								// },
-							})}
-							placeholder="Счет игрока (серебро)"
-						/>
-						<h1>III</h1>
-						<input
-							{...register("thirdPlaceName", {
-								// minLength: {
-								// 	value: 4,
-								// 	message: "Минимальная длинна - 4 символа",
-								// },
-							})}
-							placeholder="Имя игрока (бронза)"
-						/>
-						<> </>
-						<input
-							{...register("thirdPlaceScore", {
-								// minLength: {
-								// 	value: 4,
-								// 	message: "Минимальная длинна - 4 символа",
-								// },
-							})}
-							placeholder="Счет игрока (бронза)"
-						/>
-						<br></br>
-						<Button type="submit">Внести изменения</Button>
-						<> </>
-						<Button type="button" onClick={handleCancel}>
-							Отменить изменения
-						</Button>
+						<div className="border-t border-gray-200 pt-4">
+							<h2 className="text-lg font-semibold text-gray-700 mb-2">
+								Золото
+							</h2>
+							<div className="flex gap-1">
+								<input
+									className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-4"
+									{...register("firstPlaceName", {
+										// minLength: {
+										// 	value: 4,
+										// 	message: "Минимальная длинна - 4 символа",
+										// },
+									})}
+									placeholder="Имя игрока (золото)"
+								/>
+								<input
+									className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+									{...register("firstPlaceScore", {
+										// minLength: {
+										// 	value: 4,
+										// 	message: "Минимальная длинна - 4 символа",
+										// },
+									})}
+									placeholder="Счет игрока (золото)"
+								/>
+							</div>
+						</div>
+						<h2 className="text-lg font-semibold text-gray-700 mb-2">
+							Серебро
+						</h2>
+						<div className="flex gap-1">
+							<input
+								className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-4"
+								{...register("secondPlaceName", {
+									// minLength: {
+									// 	value: 4,
+									// 	message: "Минимальная длинна - 4 символа",
+									// },
+								})}
+								placeholder="Имя игрока (серебро)"
+							/>
+							<> </>
+							<input
+								className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-4"
+								{...register("secondPlaceScore", {
+									// minLength: {
+									// 	value: 4,
+									// 	message: "Минимальная длинна - 4 символа",
+									// },
+								})}
+								placeholder="Счет игрока (серебро)"
+							/>
+						</div>
+						<h2 className="text-lg font-semibold text-gray-700 mb-2">Бронза</h2>
+						<div className="flex gap-1">
+							<input
+								className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-4"
+								{...register("thirdPlaceName", {
+									// minLength: {
+									// 	value: 4,
+									// 	message: "Минимальная длинна - 4 символа",
+									// },
+								})}
+								placeholder="Имя игрока (бронза)"
+							/>
+							<> </>
+							<input
+								className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mr-4"
+								{...register("thirdPlaceScore", {
+									// minLength: {
+									// 	value: 4,
+									// 	message: "Минимальная длинна - 4 символа",
+									// },
+								})}
+								placeholder="Счет игрока (бронза)"
+							/>
+						</div>
+						<div className="flex justify-center gap-4 mt-2">
+							<Button className="flex-1" type="submit">
+								Внести изменения
+							</Button>
+							<Button className="flex-1" type="button" onClick={handleCancel}>
+								Отменить изменения
+							</Button>
+						</div>
 					</form>
 				</div>
 			)}
