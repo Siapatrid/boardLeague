@@ -17,7 +17,7 @@ let initialState: InitialStateType = {
 		login: "Luixo",
 		password: "LuixoLuixo",
 	},
-	isAuth: true,
+	isAuth: false,
 };
 
 const masterReducer = (
